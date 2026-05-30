@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rams Tech — Cutting‑Edge Tech Solutions</title>
+  <meta name="description" content="Rams Tech: cutting-edge digital solutions — design, IDs, TIN applications, and more. Based in Arusha, Tanzania." />
+  <meta name="keywords" content="Rams tech, tech solutions, Arusha, Tanzania, flyers, posters, NIDA, TIN" />
+  <meta property="og:title" content="Rams Tech" />
+  <meta property="og:description" content="Experience cutting-edge tech solutions with us! Let's elevate your world with innovative technology, tailored for everyone." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Analytics (replace GA_MEASUREMENT_ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root{
+      --blue:#0b2e82; /* deep blue */
+      --blue-600:#0d3aa8;
+      --accent:#1e90ff;
+      --bg:#0a0f1a;
+      --muted:#6b7a90;
+      --card:#0f1726;
+      --white:#ffffff;
+      --ring:rgba(30,144,255,.35);
+      --success:#1fbf75;
+      --warning:#f5a524;
+      --danger:#ef4444;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:linear-gradient(180deg,#050914,#0a1326 35%,#0d1731);color:#e8eefc;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Layout */
+    .container{width:min(1200px,92vw);margin-inline:auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(10,19,38,.8);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{height:44px;width:auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,.4))}
+    .brand h1{font-size:20px;margin:0;font-weight:800;letter-spacing:.6px}
+    .tagline{font-size:12px;color:#c7d3ee;opacity:.85}
+
+    .navlinks{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .navlinks a{padding:8px 12px;border-radius:10px;color:#dfe8ff;opacity:.95}
+    .navlinks a:hover{background:rgba(255,255,255,.06)}
+
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;background:linear-gradient(180deg,var(--blue),var(--blue-600));border:1px solid rgba(255,255,255,.1);border-radius:999px;color:#fff;font-weight:700;box-shadow:0 6px 24px rgba(14,48,128,.35)}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,.12);color:#dfe8ff}
+
+    /* Mobile menu */
+    .menu-btn{display:none}
+    @media(max-width:900px){
+      .menu-btn{display:inline-flex}
+      .navlinks{display:none}
+      .nav.open .navlinks{display:flex;position:absolute;left:0;right:0;top:64px;background:rgba(7,12,24,.98);padding:14px;flex-direction:column;gap:6px;border-bottom:1px solid rgba(255,255,255,.06)}
+      .nav.open .navlinks a{padding:12px}
+    }
+
+    /* Hero */
+    .hero{isolation:isolate;position:relative;padding:72px 0 56px;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:-20% -10% auto -10%;height:120%;background:radial-gradient(800px 400px at 20% -10%,rgba(30,144,255,.35),transparent 60%),radial-gradient(800px 400px at 80% -20%,rgba(11,46,130,.45),transparent 60%);z-index:-1}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    .hero h2{font-size:44px;line-height:1.08;margin:0 0 14px;font-weight:900}
+    .hero p{color:#c9d4ef;max-width:58ch}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+    .glass{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+
+    /* Cards */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){.cards{grid-template-columns:1fr}}
+    .card{padding:18px;background:linear-gradient(180deg,#0f1726,#0b1222);border:1px solid rgba(255,255,255,.08);border-radius:16px;transition:.25s transform}
+    .card:hover{transform:translateY(-4px)}
+    .price{font-weight:800;color:#fff}
+    .muted{color:#b6c4e6}
+
+    .section{padding:64px 0}
+    .section h3{margin:0 0 10px;font-size:28px}
+    .section .lead{color:#c7d3ee;margin-bottom:22px}
+
+    /* Services search */
+    .search{display:flex;gap:10px;align-items:center;margin:10px 0 18px}
+    .search input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0a1222;color:#e8eefc}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .gallery img{border-radius:12px;aspect-ratio:4/3;object-fit:cover}
+
+    /* Testimonials */
+    .testi{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media(max-width:1000px){.testi{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){.testi{grid-template-columns:1fr}}
+
+    /* Blog / community */
+    .post{padding:16px}
+
+    /* Contact */
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:700px){form .row{grid-template-columns:1fr}}
+    input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0a1222;color:#e8eefc}
+    textarea{min-height:120px;resize:vertical}
+    label{font-size:13px;color:#c9d4ef}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+
+    .payments{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .pay-pill{border:1px dashed rgba(255,255,255,.18);padding:10px 12px;border-radius:999px}
+
+    /* Footer */
+    footer{margin-top:56px;border-top:1px solid rgba(255,255,255,.08);padding:28px 0;color:#b8c6e8}
+
+    /* Badges */
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14)}
+
+    /* Lang toggle */
+    .lang-toggle{display:inline-flex;border-radius:12px;border:1px solid rgba(255,255,255,.14);overflow:hidden}
+    .lang-toggle button{background:transparent;border:0;color:#dfe8ff;padding:8px 12px}
+    .lang-toggle button.active{background:rgba(255,255,255,.12);font-weight:700}
+
+    /* Utility */
+    .hidden{display:none!important}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" id="nav">
+      <div class="brand">
+        <!-- Put the provided logo in the same folder and keep the filename -->
+        <img src="Picsart_25-08-31_07-30-09-323.png" alt="Rams Tech logo"/>
+        <div>
+          <h1>Rams Tech</h1>
+          <div class="tagline" data-i18n="slogan">Experience cutting-edge tech solutions with us! Let's elevate your world with innovative technology, tailored for everyone.</div>
+        </div>
+      </div>
+      <nav class="navlinks">
+        <a href="#home" data-i18n="nav_home">Home</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+        <a href="#blog" data-i18n="nav_blog">Blog</a>
+        <a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+        <a href="#policies" class="ghost" data-i18n="nav_policies">Policies</a>
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button type="button" class="active" data-lang="en">EN</button>
+          <button type="button" data-lang="sw">SW</button>
+        </div>
+        <a class="pill" href="https://wa.me/255620130446" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta_chat">Chat on WhatsApp</span>
+        </a>
+      </nav>
+      <button class="menu-btn pill" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h2 data-i18n="hero_title">We build digital solutions for everyone.</h2>
+        <p class="lead" data-i18n="hero_sub">From graphic design to digital identity and tax services — Rams Tech delivers fast, reliable, and affordable solutions in Arusha, Tanzania.</p>
+        <div class="cta-row">
+          <a href="#services" class="pill"><i class="fa-solid fa-bolt"></i> <span data-i18n="cta_explore">Explore Services</span></a>
+          <a href="#booking" class="pill ghost"><i class="fa-solid fa-calendar-check"></i> <span data-i18n="cta_book">Book Now</span></a>
+        </div>
+        <div class="badge" style="margin-top:14px"><i class="fa-solid fa-location-dot"></i> Arusha, Tanzania • <i class="fa-solid fa-clock" style="margin-left:8px"></i> <span data-i18n="hours">Mon–Fri, 8:00–18:00</span></div>
+      </div>
+      <div class="glass" style="padding:18px">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop" alt="Hero image" style="border-radius:12px"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <h3 data-i18n="services_title">Products & Services</h3>
+      <p class="lead" data-i18n="services_lead">Top services tailored to your needs. Search or browse and book instantly.</p>
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="serviceSearch" placeholder="Search services…" data-i18n-placeholder="search_placeholder" />
+      </div>
+      <div class="cards" id="serviceCards"><!-- populated by JS --></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h3 data-i18n="gallery_title">Gallery</h3>
+      <p class="lead" data-i18n="gallery_lead">A peek into our recent projects and outcomes.</p>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="work 1">
+        <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1200&auto=format&fit=crop" alt="work 2">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="work 3">
+        <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1200&auto=format&fit=crop" alt="work 4">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h3 data-i18n="about_title">About Rams Tech</h3>
+      <p class="lead" data-i18n="about_intro">Founded in 20201, Rams Tech began as a small studio helping local businesses digitize their presence. Today, we serve clients across Tanzania with dependable tech and creative services.</p>
+      <div class="cards">
+        <div class="card">
+          <h4 data-i18n="mission_h">Mission</h4>
+          <p class="muted" data-i18n="mission_t">To empower individuals and businesses with accessible, innovative, and practical digital solutions that improve everyday life.</p>
+        </div>
+        <div class="card">
+          <h4 data-i18n="vision_h">Vision</h4>
+          <p class="muted" data-i18n="vision_t">To be the most trusted partner for digital services in East Africa—renowned for quality, speed, and human support.</p>
+        </div>
+        <div class="card">
+          <h4 data-i18n="values_h">Core Values</h4>
+          <ul class="muted" style="margin:0 0 0 18px">
+            <li data-i18n="v1">Integrity & transparency</li>
+            <li data-i18n="v2">Customer-first mindset</li>
+            <li data-i18n="v3">Innovation & learning</li>
+            <li data-i18n="v4">Speed with quality</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4 data-i18n="usp_h">Why choose us?</h4>
+          <p class="muted" data-i18n="usp_t">We’re best for digital solutions—fast delivery, clear communication, and fair pricing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG / COMMUNITY -->
+  <section id="blog" class="section">
+    <div class="container">
+      <h3 data-i18n="blog_title">Blog & Community</h3>
+      <p class="lead" data-i18n="blog_lead">Tips, updates, and discussions. Join the conversation!</p>
+      <div class="cards" id="blogWrap">
+        <article class="card post"><h4>Getting your NIDA Soft Copy — quick guide</h4><p class="muted">Steps, requirements, and timelines to receive your NIDA soft copy and card.</p></article>
+        <article class="card post"><h4>Design that sells: posters that convert</h4><p class="muted">A short checklist for high‑impact flyers and posters.</p></article>
+        <article class="card post"><h4>TIN number application: what you need</h4><p class="muted">Documents, how long it takes, and common mistakes to avoid.</p></article>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <h4 data-i18n="community_h">Start a discussion</h4>
+        <form id="discussionForm">
+          <label data-i18n="topic_l">Topic</label>
+          <input name="topic" required>
+          <label data-i18n="message_l">Message</label>
+          <textarea name="message" required></textarea>
+          <div class="actions"><button class="pill" type="submit" data-i18n="post_btn">Post</button></div>
+        </form>
+        <div id="communityFeed" class="muted" style="margin-top:12px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h3 data-i18n="testi_title">What clients say</h3>
+      <div class="testi">
+        <div class="card"><p>“Quick and professional! My event posters looked amazing.”</p><div class="muted">— Neema, Arusha</div></div>
+        <div class="card"><p>“Rams Tech handled my TIN application smoothly. Highly recommend.”</p><div class="muted">— Joseph, Moshi</div></div>
+        <div class="card"><p>“Got my NIDA soft copy the same day. Great communication.”</p><div class="muted">— Zawadi, Dar</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING + PAYMENTS -->
+  <section id="booking" class="section">
+    <div class="container">
+      <h3 data-i18n="booking_title">Book a Service</h3>
+      <p class="lead" data-i18n="booking_lead">Choose a service, pick a date, and we’ll confirm by WhatsApp or email.</p>
+      <form id="bookingForm" class="card">
+        <div class="row">
+          <div>
+            <label data-i18n="name_l">Full Name</label>
+            <input name="name" required />
+          </div>
+          <div>
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label data-i18n="phone_l">Phone (WhatsApp enabled)</label>
+            <input name="phone" value="0620130446" required />
+          </div>
+          <div>
+            <label data-i18n="service_l">Service</label>
+            <select name="service" id="serviceSelect" required></select>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label data-i18n="date_l">Preferred date</label>
+            <input type="date" name="date" required />
+          </div>
+          <div>
+            <label data-i18n="notes_l">Notes</label>
+            <input name="notes" placeholder="Any special requests" data-i18n-placeholder="notes_ph" />
+          </div>
+        </div>
+        <div class="actions">
+          <button class="pill" type="submit" data-i18n="confirm_btn">Confirm & Request Quote</button>
+          <a class="pill ghost" href="https://wa.me/255620130446" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="payments" style="margin-top:12px">
+          <span class="muted" data-i18n="pay_methods">We accept:</span>
+          <span class="pay-pill"><i class="fa-solid fa-mobile-screen"></i> M‑Pesa</span>
+          <span class="pay-pill"><i class="fa-solid fa-mobile-screen"></i> Tigo Pesa</span>
+          <span class="pay-pill"><i class="fa-solid fa-mobile-screen"></i> Airtel Money</span>
+          <span class="pay-pill"><i class="fa-brands fa-cc-visa"></i> Credit Card</span>
+          <span class="pay-pill"><i class="fa-brands fa-cc-paypal"></i> PayPal</span>
+          <span class="pay-pill"><i class="fa-solid fa-building-columns"></i> Bank Transfer</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h3 data-i18n="contact_title">Contact Us</h3>
+      <div class="cards">
+        <div class="card">
+          <p><i class="fa-solid fa-phone"></i> +255 620 130 446 / +255 749 329 653</p>
+          <p><i class="fa-solid fa-envelope"></i> rasulimshana55@gmail.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Arusha, Tanzania</p>
+          <p><i class="fa-solid fa-clock"></i> <span data-i18n="hours">Mon–Fri, 8:00–18:00</span></p>
+          <div class="actions">
+            <a class="pill" href="https://wa.me/255620130446" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a class="pill ghost" href="tel:+255620130446" data-i18n="call_btn">Call Now</a>
+          </div>
+          <form id="newsletter" style="margin-top:16px">
+            <label data-i18n="newsletter_l">Newsletter signup</label>
+            <div class="row"><input type="email" placeholder="your@email.com" required><button class="pill" type="submit" data-i18n="subscribe_btn">Subscribe</button></div>
+          </form>
+        </div>
+        <div class="card">
+          <iframe title="Arusha map" width="100%" height="320" style="border:0;border-radius:12px" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Arusha,Tanzania&output=embed"></iframe>
+        </div>
+        <div class="card">
+          <form id="contactForm">
+            <label data-i18n="name_l">Full Name</label>
+            <input name="name" required />
+            <label>Email</label>
+            <input type="email" name="email" required />
+            <label data-i18n="message_l">Message</label>
+            <textarea name="message" required></textarea>
+            <div class="actions"><button class="pill" type="submit" data-i18n="send_btn">Send</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h3 data-i18n="faq_title">Frequently Asked Questions</h3>
+      <div class="cards">
+        <div class="card"><strong data-i18n="q1">How fast is delivery?</strong><p class="muted" data-i18n="a1">Most designs within 24–48 hours. Government services depend on authority timelines.</p></div>
+        <div class="card"><strong data-i18n="q2">Do you work weekends?</strong><p class="muted" data-i18n="a2">Official hours are Mon–Fri 8:00–18:00. Weekend support by appointment.</p></div>
+        <div class="card"><strong data-i18n="q3">How do I pay?</strong><p class="muted" data-i18n="a3">We accept mobile money, bank transfer, PayPal, and cards.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POLICIES -->
+  <section id="policies" class="section">
+    <div class="container">
+      <h3 data-i18n="policies_title">Privacy Policy & Terms</h3>
+      <div class="card">
+        <p class="muted" data-i18n="policies_body">We respect your privacy. Contact data submitted via forms is used to deliver the requested service and updates. We never sell personal data. Payments are processed by trusted providers. By using this website you agree to our terms: fair use, lawful requests only, and respectful communication.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
+      <div>© <span id="year"></span> Rams Tech • <a href="#policies" class="muted">Privacy & Terms</a></div>
+      <div class="payments">
+        <a href="https://facebook.com/rams_tech" target="_blank" class="muted"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://instagram.com/rams_tech" target="_blank" class="muted"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/255620130446" target="_blank" class="muted"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Data ---
+    const SERVICES = [
+      {
+        id:'flyers',
+        name:'FLYERS AND POSTERS',
+        desc:'We design eye-catching, professionally crafted posters and flyers tailored to your needs. Whether you\'re launching a product, promoting an event, or building your brand, we help you stand out and stay remembered.',
+        price:10000,
+        img:'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop',
+        cta:['Book Now','Request Quote']
+      },
+      {
+        id:'seal',
+        name:'MUHURI WA MWANASHERIA',
+        desc:'Tunatoa huduma ya kupigiwa mhuri kwenye vyeti vyako vya elimu.',
+        price:5000,
+        img:'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop',
+        cta:['Book Now','Request Quote']
+      },
+      {
+        id:'tin',
+        name:'TIN NAMBA APPLICATION + CERTIFICATE',
+        desc:'Tunatoa huduma ya TIN namba application na tunakupa certificate yake. Huduma hii inahitaji uwe na namba yako ya NIDA tu.',
+        price:5000,
+        img:'https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=1200&auto=format&fit=crop',
+        cta:['Book Now','Request Quote']
+      },
+      {
+        id:'nida',
+        name:'NIDA SOFT COPY ID',
+        desc:'Get the soft copy and ID card of NIDA.',
+        price:10000,
+        img:'https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop',
+        cta:['Book Now','Request Quote']
+      }
+    ];
+
+    const I18N = {
+      en:{
+        slogan:"Experience cutting-edge tech solutions with us! Let's elevate your world with innovative technology, tailored for everyone.",
+        nav_home:'Home',nav_about:'About',nav_services:'Services',nav_gallery:'Gallery',nav_blog:'Blog',nav_testimonials:'Testimonials',nav_faq:'FAQ',nav_contact:'Contact',nav_policies:'Policies',
+        cta_chat:'Chat on WhatsApp',cta_explore:'Explore Services',cta_book:'Book Now',hours:'Mon–Fri, 8:00–18:00',
+        hero_title:'We build digital solutions for everyone.',
+        hero_sub:'From graphic design to digital identity and tax services — Rams Tech delivers fast, reliable, and affordable solutions in Arusha, Tanzania.',
+        services_title:'Products & Services',services_lead:'Top services tailored to your needs. Search or browse and book instantly.',
+        search_placeholder:'Search services…',
+        gallery_title:'Gallery',gallery_lead:'A peek into our recent projects and outcomes.',
+        about_title:'About Rams Tech',about_intro:'Founded in 20201, Rams Tech began as a small studio helping local businesses digitize their presence. Today, we serve clients across Tanzania with dependable tech and creative services.',
+        mission_h:'Mission',mission_t:'To empower individuals and businesses with accessible, innovative, and practical digital solutions that improve everyday life.',
+        vision_h:'Vision',vision_t:'To be the most trusted partner for digital services in East Africa—renowned for quality, speed, and human support.',
+        values_h:'Core Values',v1:'Integrity & transparency',v2:'Customer-first mindset',v3:'Innovation & learning',v4:'Speed with quality',
+        usp_h:'Why choose us?',usp_t:'We’re best for digital solutions—fast delivery, clear communication, and fair pricing.',
+        blog_title:'Blog & Community',blog_lead:'Tips, updates, and discussions. Join the conversation!',community_h:'Start a discussion',topic_l:'Topic',message_l:'Message',post_btn:'Post',
+        testi_title:'What clients say',
+        booking_title:'Book a Service',booking_lead:'Choose a service, pick a date, and we’ll confirm by WhatsApp or email.',name_l:'Full Name',phone_l:'Phone (WhatsApp enabled)',service_l:'Service',date_l:'Preferred date',notes_l:'Notes',notes_ph:'Any special requests',confirm_btn:'Confirm & Request Quote',pay_methods:'We accept:',
+        contact_title:'Contact Us',call_btn:'Call Now',newsletter_l:'Newsletter signup',subscribe_btn:'Subscribe',send_btn:'Send',
+        faq_title:'Frequently Asked Questions',q1:'How fast is delivery?',a1:'Most designs within 24–48 hours. Government services depend on authority timelines.',q2:'Do you work weekends?',a2:'Official hours are Mon–Fri 8:00–18:00. Weekend support by appointment.',q3:'How do I pay?',a3:'We accept mobile money, bank transfer, PayPal, and cards.',
+        policies_title:'Privacy Policy & Terms',policies_body:'We respect your privacy. Contact data submitted via forms is used to deliver the requested service and updates. We never sell personal data. Payments are processed by trusted providers. By using this website you agree to our terms: fair use, lawful requests only, and respectful communication.'
+      },
+      sw:{
+        slogan:'Pata suluhisho za kiteknolojia za kisasa nasi! Tukuinue kwa ubunifu unaofaa kila mtu.',
+        nav_home:'Nyumbani',nav_about:'Kuhusu',nav_services:'Huduma',nav_gallery:'Picha',nav_blog:'Blogu',nav_testimonials:'Ushuhuda',nav_faq:'Maswali',nav_contact:'Wasiliana',nav_policies:'Sera',
+        cta_chat:'Tupigie WhatsApp',cta_explore:'Angalia Huduma',cta_book:'Weka Nafasi',hours:'Jum.1–Ijum., 8:00–18:00',
+        hero_title:'Tunajenga suluhisho za kidijitali kwa wote.',
+        hero_sub:'Kuanzia ubunifu wa picha hadi vitambulisho na huduma za TIN — Rams Tech hutekeleza haraka, kwa uaminifu na bei nafuu.',
+        services_title:'Bidhaa & Huduma',services_lead:'Huduma bora kulingana na mahitaji yako. Tafuta au chagua na uweke nafasi mara moja.',
+        search_placeholder:'Tafuta huduma…',
+        gallery_title:'Picha',gallery_lead:'Fahamu miradi yetu ya karibuni.',
+        about_title:'Kuhusu Rams Tech',about_intro:'Ilianzishwa mwaka 20201, Rams Tech ilianza kama studio ndogo ikisaidia biashara za eneo la Arusha kidijitali. Leo tunahudumia wateja nchi nzima kwa huduma zinazotegemewa.',
+        mission_h:'Dhamira',mission_t:'Kuwawezesha watu na biashara kupitia suluhisho bunifu, rahisi kufikia na zenye manufaa katika maisha ya kila siku.',
+        vision_h:'Maono',vision_t:'Kuwa mshirika wa kuaminika zaidi wa huduma za kidijitali Afrika Mashariki—tukiwa na ubora, kasi na usaidizi bora.',
+        values_h:'Misingi Yetu',v1:'Uadilifu na uwazi',v2:'Mteja kwanza',v3:'Ubunifu & kujifunza',v4:'Kasi yenye ubora',
+        usp_h:'Kwa nini tuchague?',usp_t:'Tunaongoza katika suluhisho za kidijitali—utoaji wa haraka, mawasiliano wazi na bei rafiki.',
+        blog_title:'Blogu & Jamii',blog_lead:'Vidokezo, habari na mijadala. Shiriki nasi!',community_h:'Anzisha mjadala',topic_l:'Mada',message_l:'Ujumbe',post_btn:'Tuma',
+        testi_title:'Wateja wanasema',
+        booking_title:'Weka Huduma',booking_lead:'Chagua huduma, chagua tarehe, tutathibitisha kupitia WhatsApp au barua pepe.',name_l:'Jina Kamili',phone_l:'Simu (WhatsApp)',service_l:'Huduma',date_l:'Tarehe unayotaka',notes_l:'Maelezo',notes_ph:'Mahitaji maalum',confirm_btn:'Thibitisha & Omba Bei',pay_methods:'Tunakubali:',
+        contact_title:'Wasiliana Nasi',call_btn:'Piga Simu Sasa',newsletter_l:'Jisajili kupokea habari',subscribe_btn:'Jisajili',send_btn:'Tuma',
+        faq_title:'Maswali ya Mara kwa Mara',q1:'Muda wa kuwasilisha ni upi?',a1:'Ubunifu wengi ndani ya saa 24–48. Huduma za serikali hutegemea muda wao.',q2:'Mnafanya kazi wikendi?',a2:'Saa rasmi: Jumatatu–Ijumaa 8:00–18:00. Wikendi kwa miadi.',q3:'Nitalipaje?',a3:'Tunakubali malipo kwa simu, benki, PayPal na kadi.',
+        policies_title:'Sera ya Faragha & Masharti',policies_body:'Tunaheshimu faragha yako. Taarifa zako zinatumika kutoa huduma uliyoomba na masasisho. Hatuuzi taarifa binafsi. Malipo hufanywa kupitia watoa huduma salama. Ukitumia tovuti hii unakubaliana na masharti yetu.'
+      }
+    };
+
+    // --- Render services ---
+    const cards = document.getElementById('serviceCards');
+    function fmtTZS(x){return 'Tsh ' + x.toLocaleString('en-TZ');}
+    function mkServiceCard(s){
+      const el = document.createElement('div');
+      el.className = 'card';
+      el.dataset.name = s.name.toLowerCase();
+      el.innerHTML = `
+        <img src="${s.img}" alt="${s.name}" style="border-radius:12px;aspect-ratio:16/9;object-fit:cover;margin-bottom:10px"/>
+        <h4>${s.name}</h4>
+        <p class="muted" style="min-height:62px">${s.desc}</p>
+        <div class="actions">
+          <span class="price">${fmtTZS(s.price)}</span>
+          <button class="pill" data-book="${s.id}"><i class="fa-solid fa-calendar-check"></i> ${s.cta[0]}</button>
+          <button class="pill ghost" data-quote="${s.id}"><i class="fa-solid fa-file-signature"></i> ${s.cta[1]}</button>
+        </div>`;
+      return el;
+    }
+    SERVICES.forEach(s=>cards.appendChild(mkServiceCard(s)));
+    // populate booking select
+    const serviceSelect=document.getElementById('serviceSelect');
+    SERVICES.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.name+ ' — ' + fmtTZS(s.price);serviceSelect.appendChild(o)});
+
+    // --- Search ---
+    const input = document.getElementById('serviceSearch');
+    input.addEventListener('input',()=>{
+      const q = input.value.toLowerCase();
+      [...cards.children].forEach(c=>{c.style.display = c.dataset.name.includes(q)?'block':'none'});
+    });
+
+    // --- Booking buttons ---
+    document.addEventListener('click',e=>{
+      const b = e.target.closest('[data-book]');
+      if(b){ serviceSelect.value=b.dataset.book; location.hash='#booking'; }
+      const q = e.target.closest('[data-quote]');
+      if(q){ serviceSelect.value=q.dataset.quote; location.hash='#booking'; }
+    });
+
+    // --- Forms (demo only) ---
+    const success = (msg)=>alert(msg);
+    document.getElementById('newsletter').addEventListener('submit',e=>{e.preventDefault();success('Subscribed! Thank you.');e.target.reset();});
+    document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();success('Message sent. We will reply shortly.');e.target.reset();});
+    document.getElementById('bookingForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      success('Request received! We\'ll confirm shortly on WhatsApp/email.');
+      const text = encodeURIComponent(`Hello Rams Tech, I\'d like to book: ${data.service} on ${data.date}. Name: ${data.name} | Phone: ${data.phone}`);
+      window.open(`https://wa.me/255620130446?text=${text}`,'_blank');
+      e.target.reset();
+    });
+
+    // --- Language switch ---
+    const applyLang=(lang)=>{
+      const t=I18N[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n; if(t[k]) el.textContent=t[k];});
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.dataset.i18nPlaceholder; if(t[k]) el.placeholder=t[k];});
+      document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+      document.documentElement.lang = lang;
+    };
+    document.querySelectorAll('.lang-toggle button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+    applyLang('en');
+
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
